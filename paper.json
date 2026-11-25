@@ -28,9 +28,9 @@
         "name": "Wenlin Zhang"
       }
     ],
-    "concept_doi": null,
+    "concept_doi": "10.5281/zenodo.23971255",
     "current_version": 2,
-    "doi": null,
+    "doi": "10.5281/zenodo.23971256",
     "lean_source": {
       "revision": "eb2703740e8b4b97e408a80b2eb0d0940939dfc3",
       "url": "https://github.com/the-omega-institute/trureturing/blob/eb2703740e8b4b97e408a80b2eb0d0940939dfc3/D5/S1/Recurrence/Periodic/BalaDivisorFactorialTotientPeriod.lean"

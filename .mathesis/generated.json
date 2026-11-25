@@ -24,10 +24,10 @@
   "generator_version": "0.1.0",
   "sha256": {
     "CHANGELOG.md": "e6f012e03bd48d1f3818e649431c5693b5184285f311febc5f807312358c3e8a",
-    "CITATION.cff": "06f57ef954296743c048639019059dc367ffabf18e147987f5d1517b5174094f",
+    "CITATION.cff": "578258285767cf9170bf6fff6687370459fbb0f66be96656ea6584152b82555b",
     "CONTRIBUTING.md": "fafd66e63160b2a88f433af56d2af2b0f7bf6ed2fd417d46b54446ce07c627ff",
     "LICENSES/CC-BY-4.0.txt": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650",
-    "README.md": "53f88bff9dc5e2ffdf5e05c398f897f472bcb331bed3b268f545b52e46fd9327",
+    "README.md": "0f36e24b668ad8e695fc586569048328f608b43d8441e8946e9927a1b44ab975",
     "formalization/nodes.json": "949dd178ad07b4acf53d04befe24c0688856443367444ed8158bc6ced40850e6",
     "manuscript/bala-a258899-totient-period-v2/MANIFEST.sha256": "80a8152af9cf71bcfdc009b975f45bb881ad4bb120a9d9083212d381ef403ac5",
     "manuscript/bala-a258899-totient-period-v2/README.md": "9e6165842cc49f73645e02c15c7865ace53abf26b0712cf47f77637e7f38754e",
@@ -40,9 +40,9 @@
     "manuscript/bala-a258899-totient-period-v2/sibling_checks.py": "ffe5258e8c38c33fcb7426ad289f3ada3f36f806ec5598e41fcbc524c62fe0d9",
     "manuscript/bala-a258899-totient-period-v2/siblings.tex": "34be7cf21b4ff73ad0809d7c97c5d1d87c584bf4596566357eda598e629ff9b0",
     "manuscript/bala-a258899-totient-period-v2/verify.py": "f430d8d9195afa6b45ec9e0b893e082df6e2cdcad14eabfaa2c722e0c524ee0b",
-    "paper.json": "ed7c8fca441306e440aa6081d15076fe7e28e58f3ac87c518ae1c39fc977bc7a",
+    "paper.json": "8cbfa54acb95c3859559ae36217da49b95ca9b54d175b3d2aeb4eeeaf1d16c65",
     "paper.pdf": "70e3afdcae77d68b8c794a15eaab42924a4e3348be16de369b9cf659521bcd46",
     "source.archive": "3b206e834c167c826229de1ae14676b17396a41feef79a7ff8580c36401e6743"
   },
-  "snapshot_identity": "2e71b09089338c1671df79668d46166f68bf2361fd5bad7af0f8ec33fb4386d1"
+  "snapshot_identity": "e9fc590d3df27c36b2359b2cda18bf70103d3d090873660e29f6e6b136f786c1"
 }
