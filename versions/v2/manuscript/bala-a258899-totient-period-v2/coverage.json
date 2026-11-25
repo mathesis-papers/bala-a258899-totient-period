@@ -1,0 +1,203 @@
+{
+  "source_items": [
+    {
+      "entry": "A258899",
+      "url": "https://oeis.org/A258899",
+      "locator": "COMMENTS, Peter Bala, 3 August 2025",
+      "conclusion": "Totient-dividing eventual period",
+      "status": "proved",
+      "proof": "thm:main; cor:oeis; weights (2,1)",
+      "proof_kind": "written proof"
+    },
+    {
+      "entry": "A258903",
+      "url": "https://oeis.org/A258903",
+      "locator": "COMMENTS, Peter Bala, 8 August 2025",
+      "conclusion": "Totient-dividing eventual period",
+      "status": "proved",
+      "proof": "thm:main; cor:oeis; weights (2,3)",
+      "proof_kind": "written proof"
+    },
+    {
+      "entry": "A121860",
+      "url": "https://oeis.org/A121860",
+      "locator": "COMMENTS, Peter Bala, 8 August 2025",
+      "conclusion": "Constant residue 2 modulo every positive m",
+      "status": "proved",
+      "proof": "cor:oeis; weights (1,1)",
+      "proof_kind": "written proof"
+    },
+    {
+      "entry": "A258899",
+      "url": "https://oeis.org/A258899",
+      "locator": "FORMULA, Peter Bala, 4 August 2025",
+      "conclusion": "Alternative exponential generating functions",
+      "status": "proved",
+      "proof": "cor:egf and weight symmetry",
+      "proof_kind": "written proof"
+    },
+    {
+      "entry": "A258903",
+      "url": "https://oeis.org/A258903",
+      "locator": "FORMULA, Peter Bala, 8 August 2025",
+      "conclusion": "Alternative exponential generating functions",
+      "status": "proved",
+      "proof": "cor:egf and weight symmetry",
+      "proof_kind": "written proof"
+    },
+    {
+      "entry": "A258899",
+      "url": "https://oeis.org/A258899",
+      "locator": "COMMENTS, example modulo 11",
+      "conclusion": "Period 10 at every index n >= 11",
+      "status": "proved",
+      "proof": "cor:prime",
+      "proof_kind": "written proof"
+    },
+    {
+      "entry": "A258903",
+      "url": "https://oeis.org/A258903",
+      "locator": "COMMENTS, example modulo 7",
+      "conclusion": "Period 6 at every index n >= 7",
+      "status": "proved",
+      "proof": "cor:prime",
+      "proof_kind": "written proof"
+    },
+    {
+      "entry": "A121860",
+      "url": "https://oeis.org/A121860",
+      "locator": "First COMMENT",
+      "conclusion": "c(n)=2 exactly at prime indices",
+      "status": "prior proof cited",
+      "proof": "Devillet-Kiss (2018), Corollary 4.15; cor:interpretations",
+      "proof_kind": "prior proof cited"
+    },
+    {
+      "entry": "A121860",
+      "url": "https://oeis.org/A121860",
+      "locator": "COMMENTS, Gus Wiseman, 10 January 2019",
+      "conclusion": "Matrices modulo row and column permutations",
+      "status": "proved",
+      "proof": "cor:interpretations; free group action",
+      "proof_kind": "written proof"
+    },
+    {
+      "entry": "A121860",
+      "url": "https://oeis.org/A121860",
+      "locator": "COMMENTS, David Pasino, 14 November 2025",
+      "conclusion": "Labeled rectangular-band enumeration",
+      "status": "prior proof cited",
+      "proof": "Devillet-Kiss (2018), Proposition 4.13; cor:interpretations",
+      "proof_kind": "prior proof cited"
+    },
+    {
+      "entry": "A121860",
+      "url": "https://oeis.org/A121860",
+      "locator": "History, discussion following revision 36, David Pasino, 15 November 2025",
+      "conclusion": "Three consecutive residues 2 predict a constant tail",
+      "status": "refuted-and-corrected",
+      "proof": "cor:three; residues [2,2,2,76] at n=41..44 modulo 89; proven sufficient onsets cor:oeis and cor:prime",
+      "proof_kind": "refuted-and-corrected"
+    },
+    {
+      "entry": "A386877",
+      "url": "https://oeis.org/A386877",
+      "locator": "Definition and row-sum cross-reference",
+      "conclusion": "Row sum c(n); every interior entry eventually 0 modulo m, or 0 for n >= p modulo a prime p",
+      "status": "proved",
+      "proof": "cor:triangle; lem:factorial and lem:primorial",
+      "proof_kind": "written proof"
+    },
+    {
+      "entry": "A386877",
+      "url": "https://oeis.org/A386877",
+      "locator": "FORMULA, sign(T(n,k))=A113704(n,k)",
+      "conclusion": "Positive entries occur exactly at divisors for 1 <= k <= n",
+      "status": "proved",
+      "proof": "cor:triangle; positivity of Q(n,k)",
+      "proof_kind": "written proof"
+    },
+    {
+      "entry": "A121860",
+      "url": "https://oeis.org/A121860",
+      "locator": "COMMENT, Michael De Vlieger, 12 September 2018",
+      "conclusion": "c(468) has 1007 decimal digits",
+      "status": "proved",
+      "proof": "Exact integer evaluation in sibling_checks.py; checks.json records the decimal length",
+      "proof_kind": "written proof"
+    },
+    {
+      "entry": "A057625",
+      "url": "https://oeis.org/A057625",
+      "locator": "Definition and FORMULA",
+      "conclusion": "L(n)=1 modulo m for n >= 2m; generating function",
+      "status": "proved",
+      "proof": "cor:quet",
+      "proof_kind": "written proof"
+    },
+    {
+      "entry": "A038041",
+      "url": "https://oeis.org/A038041",
+      "locator": "COMMENT, Bernard Schott, 16 May 2019; FORMULA",
+      "conclusion": "Prime-index criterion and generating function",
+      "status": "proved",
+      "proof": "cor:other",
+      "proof_kind": "written proof"
+    },
+    {
+      "entry": "A061095",
+      "url": "https://oeis.org/A061095",
+      "locator": "FORMULA; asymptotic credited to Vaclav Kotesovec, 21 July 2019",
+      "conclusion": "Generating function; 0 <= B(n)/n!-1 <= n*2^(-n/2)",
+      "status": "proved",
+      "proof": "cor:other",
+      "proof_kind": "written proof"
+    },
+    {
+      "entry": "A236696",
+      "url": "https://oeis.org/A236696",
+      "locator": "FORMULA, exponential generating function",
+      "conclusion": "Infinite constant coefficient in printed expression",
+      "status": "refuted-and-corrected",
+      "proof": "cor:other; subtract 1 from each exponential",
+      "proof_kind": "refuted-and-corrected"
+    },
+    {
+      "entry": "A320444",
+      "url": "https://oeis.org/A320444",
+      "locator": "FORMULA, prime specialization",
+      "conclusion": "Correct shift is H(p+1)=1+(p+1)^(p-1)",
+      "status": "refuted-and-corrected",
+      "proof": "cor:other; H(3)=4 and H(4)=17",
+      "proof_kind": "refuted-and-corrected"
+    },
+    {
+      "entry": "A100195",
+      "url": "https://oeis.org/A100195",
+      "locator": "Definition",
+      "conclusion": "Record Bernoulli denominators",
+      "status": "not covered",
+      "proof": "Different arithmetic question",
+      "proof_kind": "not covered"
+    },
+    {
+      "entry": "A038041,A061095,A236696,A320444",
+      "url": null,
+      "locator": "Definitions",
+      "conclusion": "Modular-tail extensions",
+      "status": "not covered",
+      "proof": "Different denominators; no application of thm:main is asserted",
+      "proof_kind": "not covered"
+    }
+  ],
+  "generalizations": [
+    "Integer u,v; period lambda(m) from n>=2m+4",
+    "Each proper quotient is divisible by every prime <= n",
+    "Arbitrary integer-valued weights have the endpoint reduction",
+    "For prime p, onset n=p for the tail and period p-1"
+  ],
+  "canonical_problem_ids": [
+    "bala-a258899-totient-period"
+  ],
+  "coverage_scope": "Posing entries and their direct scientific cross-references. Labels identify the proofs in the TeX source."
+}

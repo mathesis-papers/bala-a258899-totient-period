@@ -1,0 +1,243 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,longtable}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\A}{A_{u,v}}
+\title{Proof of Bala's totient-period conjectures:\\
+OEIS A258899 and A258903, COMMENTS\\
+(3 and 8 August 2025)}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\\small ChronoAI Pte Ltd, Singapore}
+\date{3 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove the statements labelled ``Conjecture'' in Peter Bala's COMMENTS
+of 3 August 2025 in OEIS A258899 and 8 August 2025 in A258903
+\cite{a258899,a258903}: modulo every positive integer $m$, each sequence
+is eventually periodic with least eventual period dividing $\varphi(m)$.
+For both sequences, $\varphi(m)$ is a period from $n=2m+4$ onward.
+The same factorial-divisibility argument proves Bala's constant-tail
+conjecture in A121860, COMMENTS, 8 August 2025 \cite{a121860}.
+More generally, the divisor sum with weights $u^d v^{n/d}$ reduces modulo
+$m$ to $uv^n+vu^n$ for $n\geq2m+4$; the Carmichael exponent is also a period.
+For prime moduli $p$, the onset improves to $n=p$, proving the numerical
+onsets in the two entries. Further corollaries cover the directly linked
+factorial sums and correct a three-consecutive-residues observation
+in the history of A121860 by a counterexample modulo $89$.
+\end{abstract}
+
+\section{The sequences and the result}
+Paul D. Hanna's entries A258899 and A258903 have offset zero and initial
+value $1$ \cite{a258899,a258903}. Their FORMULA fields, contributed by
+Bala on 4 and 8 August 2025 respectively, give, for $n\geq1$,
+\begin{align*}
+ a(n)&=\sum_{d\mid n}2^d\frac{n!}{d!(n/d)!},&
+ b(n)&=\sum_{d\mid n}2^d3^{n/d}\frac{n!}{d!(n/d)!}.
+\end{align*}
+The linked entry A121860, originally contributed by Vladeta Jovovic,
+has offset one and is
+$c(n)=\sum_{d\mid n} n!/(d!(n/d)!)$ for $n\geq1$ \cite{a121860}.
+
+For integers $u,v$, set $\A(0)=1$ and
+\begin{equation}\label{eq:def}
+ \A(n)=\sum_{d\mid n}u^dv^{n/d}Q(n,d),\qquad
+ Q(n,d)=\frac{n!}{d!(n/d)!}\quad(n\geq1).
+\end{equation}
+These quotients are integers. If $d=1$ or $d=n$ they equal $1$.
+Otherwise $d,e=n/d\geq2$ and $d+e\leq de=n$, so
+$Q(n,d)=\binom{n}{d,e,n-d-e}(n-d-e)!$.
+Thus $a=A_{2,1}$, $b=A_{2,3}$, and $c(n)=A_{1,1}(n)$ for $n\geq1$.
+Write $\varphi$ for Euler's totient, with $\varphi(1)=1$.
+
+\begin{theorem}\label{thm:main}
+For $u,v\in\mathbb Z$, $m\geq1$, and $n\geq2m+4$,
+\begin{equation}\label{eq:tail}
+ \A(n)\equiv uv^n+vu^n\pmod m,
+\end{equation}
+and consequently
+\begin{equation}\label{eq:period}
+ \A(n+\varphi(m))\equiv\A(n)\pmod m.
+\end{equation}
+\end{theorem}
+
+\section{Factorial divisibility and powers}
+\begin{lemma}\label{lem:factorial}
+If $m\geq1$, $d,e\geq2$, $n=de$, and $n\geq2m+4$, then
+$m!\mid n!/(d!e!)$.
+\end{lemma}
+\begin{proof}
+The inequality $(d-2)(e-2)\geq0$ gives
+$2(d+e)\leq n+4$, and hence $d+e+m\leq n$.
+Put $r=n-d-e-m\geq0$. The multinomial coefficient
+$n!/(d!e!m!r!)$ is an integer, so
+\[
+ \frac{n!}{d!e!}=m!r!\binom{n}{d,e,m,r}
+\]
+is divisible by $m!$.
+\end{proof}
+
+\begin{lemma}\label{lem:powers}
+For every integer $z$, $m\geq1$, and $n\geq m$,
+$z^{n+\varphi(m)}\equiv z^n\pmod m$.
+\end{lemma}
+\begin{proof}
+The case $m=1$ is immediate. For each prime power $p^e\Vert m$,
+if $p\mid z$, both powers vanish modulo $p^e$ because $n\geq m\geq e$.
+If $p\nmid z$, multiplication by $z$ permutes the units modulo $p^e$.
+Taking the product of all units and cancelling that product gives
+$z^{\varphi(p^e)}\equiv1\pmod{p^e}$.
+The formula $\varphi(m)=\prod_{q^f\Vert m}q^{f-1}(q-1)$ shows
+$\varphi(p^e)\mid\varphi(m)$, so the two powers are again congruent.
+The Chinese remainder theorem combines these congruences modulo $m$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Here $n>1$, so the divisors $1,n$ are distinct. Their contributions
+to \eqref{eq:def} are $uv^n$ and $vu^n$. For every other divisor,
+Lemma~\ref{lem:factorial} makes $Q(n,d)$ divisible by $m!$, hence by $m$.
+This proves \eqref{eq:tail}. Apply that identity at $n$ and
+$n+\varphi(m)$, then apply Lemma~\ref{lem:powers} to $u$ and $v$.
+\end{proof}
+
+\begin{corollary}\label{cor:oeis}
+The conjectures in A258899 and A258903 hold. Also,
+$c(n)\equiv2\pmod m$ for every $m\geq1$ and $n\geq2m+4$,
+proving the conjecture in A121860 (which was posed for $m\geq3$).
+\end{corollary}
+\begin{proof}
+Substitute $(u,v)=(2,1),(2,3),(1,1)$ into Theorem~\ref{thm:main}.
+In particular, $a(n)\equiv2+2^n$ and
+$b(n)\equiv2\cdot3^n+3\cdot2^n\pmod m$ in the stated range.
+An eventual period $T$ implies that the least eventual period divides $T$:
+extend the periodic tail to a sequence on $\mathbb Z$; its periods form
+a subgroup of $\mathbb Z$, whose positive generator divides $T$.
+\end{proof}
+
+\paragraph{A smaller universal period.}
+Let $\lambda(m)$ be the exponent of $(\mathbb Z/m\mathbb Z)^\times$,
+with $\lambda(1)=1$. Each unit order divides $\varphi(m)$, by partitioning
+the unit group into cosets of the cyclic subgroup it generates. Thus their
+least common multiple $\lambda(m)$ divides $\varphi(m)$.
+In fact \eqref{eq:period} holds with $\lambda(m)$ in place of $\varphi(m)$.
+For a prime power $p^e\Vert m$ and $p\nmid z$, the Chinese remainder
+theorem lifts $z$ modulo $p^e$ to a unit modulo $m$ (choose residue $1$
+at all other prime powers). Therefore $z^{\lambda(m)}\equiv1\pmod{p^e}$.
+When $p\mid z$, both shifted powers vanish for $n\geq m$.
+This proves the power lemma with $\lambda(m)$, and the same tail identity
+finishes the argument. The bound $2m+4$ is a sufficient onset, not a least one.
+
+\section{Companion formulas}
+\begin{corollary}\label{cor:egf}
+We have $A_{u,v}(n)=A_{v,u}(n)$ and the formal identity
+\begin{equation}\label{eq:egf}
+ \sum_{n\geq0}\A(n)\frac{x^n}{n!}
+ =1+\sum_{d\geq1}\frac{u^d}{d!}\bigl(\exp(vx^d)-1\bigr).
+\end{equation}
+\end{corollary}
+\begin{proof}
+The substitution $d\mapsto n/d$ proves symmetry. For $n\geq1$,
+the coefficient of $x^n$ on the right is
+\[
+ \sum_{de=n}\frac{u^dv^e}{d!e!}.
+\]
+Each coefficient involves finitely many terms.
+For the positive weights in the two Hanna entries,
+\eqref{eq:egf} equals
+\[
+ 2-\exp(u)+\sum_{d\geq1}u^d\exp(vx^d)/d!
+\]
+near zero.
+This follows also analytically: for $|x|\leq r<1$, the summands are
+bounded by $|u|^d\exp(|v|r)/d!$.
+Interchanging $u,v$ proves both alternative generating functions in their
+FORMULA fields. For A121860, delete the initial $1$ in
+\eqref{eq:egf}, matching its offset-one generating function.
+
+\end{proof}
+\input{siblings}
+
+\section{Coverage of the posing assertions}
+\begin{center}\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}p{0.39\textwidth}>{\raggedright\arraybackslash}p{0.29\textwidth}@{}}
+\toprule
+Source item & Statement & Coverage \\
+\midrule
+A258899, COMMENTS, 3 Aug 2025 & Totient-dividing eventual period & Theorem~\ref{thm:main}, $(u,v)=(2,1)$ \\
+A258903, COMMENTS, 8 Aug 2025 & Totient-dividing eventual period & Theorem~\ref{thm:main}, $(u,v)=(2,3)$ \\
+A121860, COMMENTS, 8 Aug 2025 & Constant residue $2$ for $m\geq3$ & Corollary~\ref{cor:oeis}; also $m=1,2$ \\
+Both Hanna entries, FORMULA & Alternative exponential generating functions & Equation~\eqref{eq:egf} and symmetry \\
+A121860, first COMMENT & $c(n)=2$ exactly for prime $n$ & Prior proof cited: \cite[Corollary 4.15]{dk}; Corollary~\ref{cor:interpretations} \\
+Entry examples of early onset & Onsets $11$ and $7$ at moduli $11$ and $7$ & Proved for all later indices: Corollary~\ref{cor:prime} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begingroup\raggedright
+\paragraph{Lean declarations.}
+In the pinned
+\href{https://github.com/the-omega-institute/trureturing/blob/eb2703740e8b4b97e408a80b2eb0d0940939dfc3/D5/S1/Recurrence/Periodic/BalaDivisorFactorialTotientPeriod.lean}{\texttt{BalaDivisorFactorialTotientPeriod.lean}},
+\path{D5.S1.Recurrence.Periodic.BalaDivisorFactorialTotientPeriod.result}
+proves the two natural-weight sequence statements, with
+$N=2m+4$ and $T=\varphi(m)$.
+The helper \texttt{proper\_factorial\_quotient\_dvd} proves divisibility
+by $m$, and \texttt{divisor\_sum\_tail} proves \eqref{eq:tail} for
+natural $u,v$. The imported
+\href{https://github.com/the-omega-institute/trureturing/blob/eb2703740e8b4b97e408a80b2eb0d0940939dfc3/D5/S1/Recurrence/Periodic/StirlingTransformTotientPeriod.lean}{power-period Lean file}
+contains \texttt{pow\_add\_totient}, the natural-base power lemma with
+$n\geq m$. The signed-weight extension, the $m!$ strengthening,
+the A121860 application, the Carmichael period, and the generating-function
+identities have the written proofs above, as do the prime-modulus bound,
+arbitrary integer weights, and the cross-referenced corollaries.
+The accompanying \texttt{verify.py} supplies exact finite checks of the
+divisor sums, the power and tail congruences, and the listed sequence values;
+its output states the finite ranges explicitly.\par
+\endgroup
+
+\begin{thebibliography}{10}
+\bibitem{a258899}
+P. D. Hanna, OEIS A258899, entry dated 20 June 2015;
+P. Bala, COMMENTS, 3 August 2025, and FORMULA, 4 August 2025.
+\url{https://oeis.org/A258899}. Accessed 3 November 2026.
+\bibitem{a258903}
+P. D. Hanna, OEIS A258903, entry dated 20 June 2015;
+P. Bala, COMMENTS and FORMULA, 8 August 2025.
+\url{https://oeis.org/A258903}. Accessed 3 November 2026.
+\bibitem{a121860}
+V. Jovovic, OEIS A121860, entry dated 9 September 2006;
+P. Bala, COMMENTS, 8 August 2025.
+\url{https://oeis.org/A121860}. Accessed 3 November 2026.
+\bibitem{dk}
+J. Devillet and G. Kiss, \emph{Characterizations of biselective operations},
+arXiv:1806.02073v1, 6 June 2018; Proposition 4.13 and Corollary 4.15.
+\url{https://arxiv.org/abs/1806.02073v1}.
+\bibitem{a386877}
+P. Bala and P. Luschny, OEIS A386877, 9 August 2025.
+\url{https://oeis.org/A386877}.
+\bibitem{a057625}
+L. Quet, OEIS A057625, 9 October 2000.
+\url{https://oeis.org/A057625}.
+\bibitem{other}
+C. G. Bower, OEIS A038041; H. Bottomley, A061095, 29 May 2001;
+E. Munarini, A236696, 30 January 2014.
+\url{https://oeis.org/A038041}, \url{https://oeis.org/A061095},
+\url{https://oeis.org/A236696}. FORMULA fields.
+\bibitem{a320444}
+G. Wiseman, OEIS A320444, 9 January 2019. FORMULA field.
+\url{https://oeis.org/A320444}.
+\bibitem{history}
+D. Pasino, discussion following revision 36 of OEIS A121860,
+15 November 2025. \url{https://oeis.org/history?seq=A121860}.
+\bibitem{a100195}
+E. W. Weisstein, OEIS A100195, 8 November 2004.
+\url{https://oeis.org/A100195}.
+\end{thebibliography}
+\medskip\noindent\small
+\copyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0),
+\url{https://creativecommons.org/licenses/by/4.0/}.
+\end{document}

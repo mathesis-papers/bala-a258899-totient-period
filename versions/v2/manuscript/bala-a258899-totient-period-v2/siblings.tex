@@ -1,0 +1,161 @@
+\section{Prime moduli and arbitrary integer weights}
+\begin{lemma}\label{lem:primorial}
+If $d,e\geq2$ and $n=de$, every prime $p\leq n$ divides $Q(n,d)$.
+\end{lemma}
+\begin{proof}
+Counting multiples of $p,p^2,\ldots$ in each factorial gives
+\[
+ v_p(Q(n,d))=\sum_{j\geq1}\left(\left\lfloor\frac{de}{p^j}\right\rfloor
+ -\left\lfloor\frac d{p^j}\right\rfloor
+ -\left\lfloor\frac e{p^j}\right\rfloor\right).
+\]
+Every summand is nonnegative since $de\geq d+e$.
+Interchange $d,e$ so $d\leq e$. Suppose $p\geq3$.
+If $e<p$, the $j=1$ summand is positive because $de\geq p$.
+If $e\geq p$, it is at least
+$(d-1)\lfloor e/p\rfloor-\lfloor d/p\rfloor
+\geq d-1-\lfloor d/p\rfloor\geq1$.
+For $p=2$ this inequality works when $d\geq3$.
+When $d=2,e\geq3$, the $j=1$ summand is
+$e-1-\lfloor e/2\rfloor\geq1$; the remaining case has $Q(4,2)=6$.
+\end{proof}
+
+\begin{corollary}\label{cor:prime}
+For every prime $p$, integer $u,v$, and $n\geq p$,
+\[
+ \A(n)\equiv uv^n+vu^n\pmod p,\qquad
+ \A(n+p-1)\equiv\A(n)\pmod p.
+\]
+Thus A258899 has period $10$ from $n=11$ modulo $11$,
+and A258903 has period $6$ from $n=7$ modulo $7$.
+\end{corollary}
+\begin{proof}
+Lemma~\ref{lem:primorial} removes every proper-divisor term.
+For a base not divisible by $p$, the unit-product argument in
+Lemma~\ref{lem:powers} gives period $p-1$; a base divisible by $p$
+has zero powers for all positive exponents. These are sufficient onsets.
+\end{proof}
+
+\begin{corollary}\label{cor:triangle}
+For any integer-valued function $W(d,e)$,
+$\sum_{d\mid n}W(d,n/d)Q(n,d)$ is congruent to
+$W(1,n)+W(n,1)$ modulo $m$ if $n\geq2m+4$, or modulo a prime
+$p$ if $n\geq p$. In A386877 \cite{a386877},
+all entries strictly between the endpoint $1$'s vanish modulo
+the respective modulus in these ranges; the row sum is $c(n)$ for $n\geq1$.
+The sign of $T(n,k)$ is the divisibility indicator A113704 for $1\leq k\leq n$.
+\end{corollary}
+\begin{proof}
+Apply Lemma~\ref{lem:factorial} or Lemma~\ref{lem:primorial} termwise.
+Nondivisor entries and column zero are zero for $n>0$;
+the other entries are the positive integers $Q(n,d)$ by the triangle's definition,
+which also proves the sign assertion.
+\end{proof}
+
+\section{Direct cross-references and a history observation}
+\begin{corollary}\label{cor:interpretations}
+The number of matrices with entries $1,\ldots,n$, each used once,
+up to independent row and column permutations is $c(n)$.
+The same count enumerates the labeled rectangular-band operations
+$(i,j)(k,l)=(i,l)$. Also $c(n)=2$ exactly when $n$ is prime.
+\end{corollary}
+\begin{proof}
+For each shape $d\times e$, $de=n$, the action of $S_d\times S_e$
+on the $n!$ distinct-entry arrays is free, giving $Q(n,d)$ orbits.
+A grid gives the stated operation. Conversely its row and column classes
+are recovered from equality of left and right multiplication maps,
+so two grids give the same operation exactly when they differ by row
+and column permutations. Sum over the shapes.
+For prime $n$ only the two endpoint terms occur; for composite $n>1$
+a positive proper-divisor term adds to $2$, and $c(1)=1$.
+The rectangular-band enumeration and primality criterion already appear in
+Devillet and Kiss \cite[Proposition 4.13 and Corollary 4.15]{dk},
+whose preprint dates from June 2018.
+\end{proof}
+
+\begin{corollary}\label{cor:quet}
+For A057625 \cite{a057625}, let $L(n)=\sum_{d\mid n}n!/d!$, $n\geq1$.
+Then $L(n)\equiv1\pmod m$ for every $m\geq1$, $n\geq2m$, and
+$\sum_{n\geq1}L(n)x^n/n!=\sum_{d\geq1}x^d/(d!(1-x^d))$.
+\end{corollary}
+\begin{proof}
+The term $d=n$ is $1$. For a proper divisor $d\leq n/2$,
+$n-d\geq m$, and
+$n!/d!=m!(n-d-m)!\binom{n}{d,m,n-d-m}$ is divisible by $m$.
+Expand $x^d/(1-x^d)=\sum_{e\geq1}x^{de}$ for the generating function.
+\end{proof}
+
+\begin{corollary}\label{cor:other}
+Let $P(n),B(n),F(n)$ denote A038041, A061095 and A236696,
+respectively \cite{other}; their offset is one. Then
+\begin{align*}
+ \sum_{n\geq1}P(n)\frac{x^n}{n!}
+   &=\sum_{k\geq1}\left(\exp(x^k/k!)-1\right),\\
+ \sum_{n\geq1}B(n)\frac{x^n}{n!}
+   &=\sum_{k\geq1}\frac{x^k}{k!-x^k},\\
+ \sum_{n\geq1}F(n)\frac{x^n}{n!}
+   &=\sum_{k\geq1}\left(\exp(k^{k-1}x^k/k!)-1\right).
+\end{align*}
+Also $P(n)=2$ exactly at prime $n$, and
+$0\leq B(n)/n!-1\leq n2^{-n/2}$.
+If $H(n)$ is A320444 \cite{a320444}, its prime specialization is
+$H(p+1)=1+(p+1)^{p-1}$ for every prime $p$.
+\end{corollary}
+\begin{proof}
+The defining sums are
+\begin{align*}
+ P(n)&=\sum_{ke=n}\frac{n!}{e!(k!)^e},&
+ B(n)&=\sum_{ke=n}\frac{n!}{(k!)^e},\\
+ F(n)&=\sum_{ke=n}\frac{n!}{e!}\left(\frac{k^{k-1}}{k!}\right)^e.
+\end{align*}
+Expand the exponentials and geometric series; every positive-degree
+coefficient is a finite sum. The displayed A236696 generating function
+omits the subtractions of $1$; its constant coefficient is an infinite
+sum of $1$'s. The formula above is the well-defined offset-one version.
+For $P$, the endpoint partitions contribute $2$ when $n>1$;
+a proper factor supplies additional partitions at composite $n$, and $P(1)=1$.
+For $B$, the $k=1$ term is $n!$. If $k\geq2$, then
+$k!\geq2^{k-1}\geq2^{k/2}$, so $(k!)^{n/k}\geq2^{n/2}$;
+there are at most $n$ other terms, proving the bound and $B(n)\sim n!$.
+Finally
+$H(n+1)=\sum_{d\mid n}Q(n,d)((n+1)/d)^{n/d-1}$
+has only the divisors $1,p$ when $n=p$, contributing
+$(p+1)^{p-1}$ and $1$. Thus the printed prime formula in A320444
+needs the shift to $H(p+1)$: $H(3)=4$, whereas $17=1+4^2=H(4)$.
+These sums have different denominators; no congruence for $P,B,F,H$
+is inferred from Theorem~\ref{thm:main}.
+\end{proof}
+
+\begin{corollary}\label{cor:three}
+Three consecutive residues $2$ in A121860 need not begin a constant tail.
+Modulo $89$, $(c(41),c(42),c(43),c(44))\equiv(2,2,2,76)$.
+\end{corollary}
+\begin{proof}
+The numbers $41,43$ are prime. Pairing complementary proper divisors gives
+$c(42)=2+2(Q(42,2)+Q(42,3)+Q(42,6))$ and
+$c(44)=2+2(Q(44,2)+Q(44,4))$.
+The quotient residues modulo $89$ are $(82,71,25)$ and $(21,16)$,
+respectively, giving the asserted residues by exact arithmetic.
+This corrects David Pasino's observation in the A121860 history,
+15 November 2025, discussion following revision 36 \cite{history}.
+\end{proof}
+
+\begingroup\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}p{0.39\textwidth}>{\raggedright\arraybackslash}p{0.29\textwidth}@{}}
+\toprule
+Source item & Statement & Coverage \\
+\midrule
+\endhead
+A121860, COMMENTS (2019, 2025) & Matrix and rectangular-band counts & Proved; prior band proof cited: Corollary~\ref{cor:interpretations} \\
+A121860 history, 15 Nov 2025 & Three residues $2$ predict onset & Refuted-and-corrected: Corollary~\ref{cor:three} \\
+A386877 & Row sum and vanishing interior entries & Proved: Corollary~\ref{cor:triangle} \\
+A057625 & Constant tail $1$; generating function & Proved: Corollary~\ref{cor:quet} \\
+A038041 & Prime criterion; generating function & Proved: Corollary~\ref{cor:other} \\
+A061095 & Generating function; $B(n)\sim n!$ & Proved: Corollary~\ref{cor:other} \\
+A236696, FORMULA & Generating function's constant coefficient & Refuted-and-corrected: Corollary~\ref{cor:other} \\
+A320444, FORMULA & Prime-specialization index & Refuted-and-corrected: Corollary~\ref{cor:other} \\
+A100195 \cite{a100195} & Record Bernoulli denominators & Not covered: different arithmetic question \\
+A038041, A061095, A236696, A320444 & Possible modular tails & Not covered: denominators differ \\
+\bottomrule
+\end{longtable}
+\endgroup

@@ -1,0 +1,66 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 88161,
+      "matches_public": true,
+      "path": "paper.pdf",
+      "public_sha256": "70e3afdcae77d68b8c794a15eaab42924a4e3348be16de369b9cf659521bcd46",
+      "sha256": "70e3afdcae77d68b8c794a15eaab42924a4e3348be16de369b9cf659521bcd46"
+    },
+    "source": {
+      "bytes": 22151,
+      "matches_public": true,
+      "path": "source.archive",
+      "public_sha256": "3b206e834c167c826229de1ae14676b17396a41feef79a7ff8580c36401e6743",
+      "sha256": "3b206e834c167c826229de1ae14676b17396a41feef79a7ff8580c36401e6743"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "The conjectures in Peter Bala's COMMENTS of 3 August 2025 in OEIS A258899 and 8 August 2025 in A258903 are proved: modulo every positive integer m, each sequence is eventually periodic with least eventual period dividing Euler's totient phi(m). The explicit sufficient onset is 2*m+4. A weighted divisor-factorial tail identity also proves the constant-tail conjecture in A121860 (COMMENTS, 8 August 2025), and gives the Carmichael exponent as an eventual period for all integer weights.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 2,
+    "doi": null,
+    "lean_source": {
+      "revision": "eb2703740e8b4b97e408a80b2eb0d0940939dfc3",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/eb2703740e8b4b97e408a80b2eb0d0940939dfc3/D5/S1/Recurrence/Periodic/BalaDivisorFactorialTotientPeriod.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "bytes": 88161,
+      "sha256": "70e3afdcae77d68b8c794a15eaab42924a4e3348be16de369b9cf659521bcd46",
+      "url": "/api/v1/collected-papers/bala-a258899-totient-period/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-25T18:20:49.841048373Z",
+    "record": "bala-a258899-totient-period",
+    "repository_name": "bala-a258899-totient-period",
+    "source": {
+      "bytes": 22151,
+      "sha256": "3b206e834c167c826229de1ae14676b17396a41feef79a7ff8580c36401e6743",
+      "url": "/api/v1/collected-papers/bala-a258899-totient-period/files/source?version=2"
+    },
+    "title": "Proof of Bala's totient-period conjectures: OEIS A258899 and A258903, COMMENTS (3 and 8 August 2025)",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-25T18:20:49.841048373Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "bala-a258899-totient-period"
+  }
+}

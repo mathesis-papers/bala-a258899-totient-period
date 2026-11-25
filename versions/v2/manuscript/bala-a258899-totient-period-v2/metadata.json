@@ -1,0 +1,23 @@
+{
+  "id": "bala-a258899-totient-period",
+  "revision": 2,
+  "problem_ids": [
+    "bala-a258899-totient-period"
+  ],
+  "topic": "Bala conjectures in OEIS A258899 and A258903, COMMENTS, 3 and 8 August 2025",
+  "title": "Proof of Bala's totient-period conjectures: OEIS A258899 and A258903, COMMENTS (3 and 8 August 2025)",
+  "creators": [
+    {
+      "name": "Ma, Haobo",
+      "affiliation": "ChronoAI Pte Ltd, Singapore"
+    },
+    {
+      "name": "Zhang, Wenlin",
+      "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"
+    }
+  ],
+  "abstract": "The conjectures in Peter Bala's COMMENTS of 3 August 2025 in OEIS A258899 and 8 August 2025 in A258903 are proved: modulo every positive integer m, each sequence is eventually periodic with least eventual period dividing Euler's totient phi(m). The explicit sufficient onset is 2*m+4. A weighted divisor-factorial tail identity also proves the constant-tail conjecture in A121860 (COMMENTS, 8 August 2025), and gives the Carmichael exponent as an eventual period for all integer weights.",
+  "summary": "For n >= 2*m+4, the divisor-factorial sum with weights u^d*v^(n/d) is congruent to u*v^n+v*u^n modulo m. For prime p the same identity holds for n >= p, proving the observed onsets. Corollaries cover A121860, A386877 and A057625, and correct source formulas for A236696 and A320444. The residues 2,2,2,76 at indices 41..44 modulo 89 refute the three-residue onset heuristic.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/eb2703740e8b4b97e408a80b2eb0d0940939dfc3/D5/S1/Recurrence/Periodic/BalaDivisorFactorialTotientPeriod.lean"
+}

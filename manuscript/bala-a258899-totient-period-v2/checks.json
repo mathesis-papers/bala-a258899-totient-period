@@ -1,0 +1,120 @@
+{
+  "arithmetic": "exact integers and fractions",
+  "counts": {
+    "carmichael_periods": 433152,
+    "constant_tail": 12032,
+    "factorial_tail_terms": 49882,
+    "integer_quotients": 2351,
+    "oeis_terms": 122,
+    "power_congruences": 172416,
+    "prime_characterization": 256,
+    "rational_coefficients": 864,
+    "tail_congruences": 433152,
+    "totient_periods": 433152,
+    "weight_symmetry": 13860
+  },
+  "oeis_examples": [
+    {
+      "checked_base_indices": [
+        11,
+        256
+      ],
+      "entry": "A258899",
+      "modulus": 11,
+      "onset": 11,
+      "period": 10
+    },
+    {
+      "checked_base_indices": [
+        7,
+        256
+      ],
+      "entry": "A258903",
+      "modulus": 7,
+      "onset": 7,
+      "period": 6
+    }
+  ],
+  "ranges": {
+    "computed_indices": [
+      0,
+      384
+    ],
+    "moduli": [
+      1,
+      64
+    ],
+    "power_base_indices": "m <= n <= 256",
+    "rational_coefficient_indices": [
+      1,
+      24
+    ],
+    "tail_and_period_base_indices": "2*m+4 <= n <= 256",
+    "weights": [
+      -2,
+      3
+    ]
+  },
+  "scope": "Finite checks; the note supplies proofs for all stated parameters.",
+  "sibling_checks": {
+    "A121860_decimal_length": {
+      "digits": 1007,
+      "index": 468
+    },
+    "companion_coefficient_indices": [
+      1,
+      24
+    ],
+    "companion_indices": [
+      1,
+      64
+    ],
+    "corrected_hypertree_example": {
+      "H(3)": 4,
+      "H(4)": 17
+    },
+    "counterexample": {
+      "indices": [
+        41,
+        44
+      ],
+      "modulus": 89,
+      "residues": [
+        2,
+        2,
+        2,
+        76
+      ]
+    },
+    "counts": {
+      "arbitrary_weight_tails": 37815,
+      "asymptotic_bounds": 64,
+      "companion_coefficients": 96,
+      "companion_prefix_terms": 99,
+      "hypertree_prime_formula": 18,
+      "matrix_orbit_shapes": 10,
+      "partition_prime_characterization": 64,
+      "prime_period": 148500,
+      "prime_tail": 148500,
+      "primorial_divisibility": 73568,
+      "quet_constant_tail": 12288,
+      "rectangular_band_counts": 5
+    },
+    "integer_weight_functions": 3,
+    "matrix_and_band_indices": [
+      1,
+      5
+    ],
+    "prime_base_indices": "p <= n <= 256",
+    "prime_moduli": [
+      2,
+      61
+    ],
+    "primorial_indices": [
+      4,
+      384
+    ],
+    "scope": "Exact finite checks of the stated ranges; infinite statements have written proofs."
+  },
+  "status": "pass"
+}
