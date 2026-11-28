@@ -31,6 +31,7 @@
     "concept_doi": "10.5281/zenodo.23971255",
     "current_version": 2,
     "doi": "10.5281/zenodo.23971256",
+    "kind": "note",
     "lean_source": {
       "revision": "eb2703740e8b4b97e408a80b2eb0d0940939dfc3",
       "url": "https://github.com/the-omega-institute/trureturing/blob/eb2703740e8b4b97e408a80b2eb0d0940939dfc3/D5/S1/Recurrence/Periodic/BalaDivisorFactorialTotientPeriod.lean"
@@ -55,10 +56,12 @@
     "title": "Proof of Bala's totient-period conjectures: OEIS A258899 and A258903, COMMENTS (3 and 8 August 2025)",
     "versions": [
       {
+        "changelog": null,
         "previous_version": null,
         "published_on": "2026-11-25T18:20:49.841048373Z",
         "revision": "2",
-        "version": 2
+        "version": 2,
+        "version_label": null
       }
     ],
     "work": "bala-a258899-totient-period"
